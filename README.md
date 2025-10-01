@@ -16,3 +16,4 @@
 - Playlist: [https://www.youtube.com/playlist?list=PLZE_BkQdGVDQ5ZZY5-ONGr2UPZ0mkkw8Y](https://www.youtube.com/playlist?list=PLZE_BkQdGVDQ5ZZY5-ONGr2UPZ0mkkw8Y)
 - Videos:
     - New Project Introduction: [https://youtu.be/DNrxjp64GgY](https://youtu.be/DNrxjp64GgY)
+    - Add Database & Models: [https://youtu.be/QjQ1gMkPOYo](https://youtu.be/QjQ1gMkPOYo)
