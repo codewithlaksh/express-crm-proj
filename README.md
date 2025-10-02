@@ -17,3 +17,4 @@
 - Videos:
     - New Project Introduction: [https://youtu.be/DNrxjp64GgY](https://youtu.be/DNrxjp64GgY)
     - Add Database & Models: [https://youtu.be/QjQ1gMkPOYo](https://youtu.be/QjQ1gMkPOYo)
+    - Add UI Templates: [https://youtu.be/iz3J5cw0p7E](https://youtu.be/iz3J5cw0p7E)

@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-center">Login using credentials</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/auth/login" method="post">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-key"></i>
+                            </span>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        </div>
+
+                        <button type="submit" class="btn btn-sm btn-dark" style="width: 100%; text-align: center;">
+                            <i class="fa fa-sign-in"></i>
+                            Login
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p class="text-center">
+                        Not a member yet ? <a href="/auth/register">Register here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

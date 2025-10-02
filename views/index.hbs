@@ -1,0 +1,136 @@
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-bg-primary text-center mb-3" style="max-width: 18rem;">
+                <div class="card-header">Total</div>
+                <div class="card-body">
+                    <h5 class="card-title">120</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-bg-danger text-center mb-3" style="max-width: 18rem;">
+                <div class="card-header">Pending</div>
+                <div class="card-body">
+                    <h5 class="card-title">30</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-bg-success text-center mb-3" style="max-width: 18rem;">
+                <div class="card-header">Delivered</div>
+                <div class="card-body">
+                    <h5 class="card-title">80</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-3">
+
+    <h5>My Orders: </h5>
+
+    <table class="table table-striped" id="orders_table">
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9656e2ea-e6db-40d4-8988-4754657a634d</td>
+                <td>Product 1</td>
+                <td>$ 199.99</td>
+                <td>
+                    <button class="btn btn-sm btn-danger cancelOrderBtn">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>d8bc3bbf-154b-47de-8a59-a94edf1ed929</td>
+                <td>Product 2</td>
+                <td>$ 199.99</td>
+                <td>
+                    <button class="btn btn-sm btn-danger cancelOrderBtn">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>146bb73e-b22e-4f11-8e02-e4d9daed219d</td>
+                <td>Product 3</td>
+                <td>$ 199.99</td>
+                <td>
+                    <button class="btn btn-sm btn-danger cancelOrderBtn">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>0c39ff05-1200-4481-a510-0eb39153131d</td>
+                <td>Product 4</td>
+                <td>$ 199.99</td>
+                <td>
+                    <button class="btn btn-sm btn-danger cancelOrderBtn">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>23dbac8a-3878-4106-adbe-1fa6f681bb72</td>
+                <td>Product 5</td>
+                <td>$ 199.99</td>
+                <td>
+                    <button class="btn btn-sm btn-danger cancelOrderBtn">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{> _cancelOrderModal}}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.js"></script>
+
+<script>
+    let link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.css";
+    document.head.insertAdjacentElement("beforeend", link);
+</script>
+
+<script>
+    new DataTable('#orders_table');
+</script>
+
+<script>
+    const cancelOrderBtns = document.querySelectorAll('.cancelOrderBtn');
+
+    Array.from(cancelOrderBtns).forEach((btn) => btn.addEventListener("click", (e) => {
+        toggleDeleteModal(e.currentTarget);
+    }));
+    
+    function toggleDeleteModal(element) {
+        const tr = element.parentElement.parentElement;
+        const order_id = tr.getElementsByTagName('td')[0].textContent;
+
+        const myModal = new bootstrap.Modal('#cancelOrderModal', {keyboard: false});
+        const inp = document.getElementsByName('order_id')[0];
+        inp.value = order_id;
+
+        myModal.show();
+    }
+
+    document.querySelector('#cancelOrderModal').addEventListener('hide.bs.modal', () => {
+        const inp = document.getElementsByName('order_id')[0];
+        inp.value = "";
+    })
+</script>

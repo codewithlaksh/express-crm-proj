@@ -5,10 +5,12 @@ const OrderSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User'
     },
-    product: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Product'
-    },
+    products: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Product'
+        }
+    ],
     status: {
         type: String,
         enum: ['Pending', 'Out for delivery', 'Delivered']
